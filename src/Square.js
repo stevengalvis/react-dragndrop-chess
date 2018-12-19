@@ -1,8 +1,12 @@
 import React from "react";
 
 export default function Square({ black, children }) {
+  if (children === null) {
+    children = <span />;
+  }
   const fill = black ? "black" : "white";
   const stroke = black ? "white" : "black";
+  console.log(children);
 
   return (
     <div
@@ -13,7 +17,7 @@ export default function Square({ black, children }) {
         height: "100%"
       }}
     >
-      {children}
+      {children}/
     </div>
   );
 }
